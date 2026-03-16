@@ -663,7 +663,49 @@
   transform: translateY(0);
   pointer-events:auto;
 }
+/* ───────── Dropdown projets SIO ───────── */
 
+.dropdown-projects{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-projects-menu{
+  position: absolute;
+  top:110%;
+  left:0;
+  background: rgba(17,18,24,0.95);
+  border:1px solid rgba(124,58,237,.25);
+  border-radius:10px;
+  padding:8px 0;
+  min-width:180px;
+  display:flex;
+  flex-direction:column;
+  opacity:0;
+  transform: translateY(-8px);
+  pointer-events:none;
+  transition: all .25s ease;
+  z-index:100;
+}
+
+.dropdown-projects-menu a{
+  padding:8px 14px;
+  color:var(--text);
+  font-size:14px;
+  transition:.2s;
+}
+
+.dropdown-projects-menu a:hover{
+  background: rgba(124,58,237,.18);
+  color:white;
+}
+
+/* ouverture */
+.dropdown-projects:hover .dropdown-projects-menu{
+  opacity:1;
+  transform: translateY(0);
+  pointer-events:auto;
+}
 
 
 </style>
