@@ -262,6 +262,28 @@
 </footer>
 <script>
 
+         
+document.querySelectorAll('.dropdown, .dropdown-projects').forEach(dropdown => {
+  const btn = dropdown.querySelector('button, .nav-link');
+  const menu = dropdown.querySelector('.dropdown-menu, .dropdown-projects-menu');
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = menu.style.opacity === '1';
+    menu.style.opacity = isOpen ? '0' : '1';
+    menu.style.transform = isOpen ? 'translateY(-8px)' : 'translateY(0)';
+    menu.style.pointerEvents = isOpen ? 'none' : 'auto';
+  });
+});
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('.dropdown-menu, .dropdown-projects-menu').forEach(menu => {
+    menu.style.opacity = '0';
+    menu.style.transform = 'translateY(-8px)';
+    menu.style.pointerEvents = 'none';
+  });
+});
+
     // ─────────────────────────────────────────────────────────────────────
     // Reveal on Scroll (IntersectionObserver)
     // ─────────────────────────────────────────────────────────────────────
